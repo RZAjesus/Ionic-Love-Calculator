@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="love">
+    <ion-title text-center>
+      Love Calculator
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- Floating Label Input Boxes -->
+<!-- Use ngModel for two way binding -->
+<ion-content padding> 
+<ion-list>
+  <ion-item>   
+    <ion-label floating>Name One</ion-label>
+    <ion-input type="text" [(ngModel)]="nameOne"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Name Two</ion-label>
+    <ion-input type="text" [(ngModel)]="nameTwo">></ion-input>
+  </ion-item>
+
+  <!-- "nameOne and nameTwo" gets updated in the app in real time-->
+  <ion-card text-center>
+  <ion-card-header class="names">
+    <!-- If no names are entered yet it displays question marks on each side-->
+    {{nameOne || '?'}}
+    <ion-icon name="heart" color="love"></ion-icon>
+    {{nameTwo || '?'}}
+  </ion-card-header>
+  <ion-card-content class="score">
+     {{ score }}%
+  </ion-card-content>
+</ion-card>
+
+</ion-list>
+</ion-content>
